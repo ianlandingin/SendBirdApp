@@ -79,3 +79,5 @@ I've developed the backend using nodejs expressjs.
 - channelRoutes
 
 I've also created postman/thunder client collection, both for prod and local hosts, during endpoint testing.
+
+I would like to Thank you for giving me this challenge and task and for giving me the opportunity to apply for the position.
