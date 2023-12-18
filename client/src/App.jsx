@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React, { useEffect } from "react";
+// import SendbirdApp from "@sendbird/uikit-react/App";
+import SendbirdProvider from "@sendbird/uikit-react/SendbirdProvider";
+// import SendbirdChat from "@sendbird/chat";
+// import EditUserProfile from "@sendbird/uikit-react/EditUserProfile";
+import { EditUserProfileProvider } from "@sendbird/uikit-react/EditUserProfile/context";
+import "@sendbird/uikit-react/dist/index.css";
+import ChatApp from "./ChatApp";
 
-function App() {
-  const [count, setCount] = useState(0)
+const APP_ID = import.meta.env.VITE_APP_ID;
+const USER_ID = import.meta.env.VITE_USER_ID;
+const NICKNAME = import.meta.env.VITE_NICKNAME;
+const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
+console.log(
+  document.getElementsByClassName("sendbird-channel-header__title")[0]
+);
 
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <SendbirdProvider
+        appId={APP_ID}
+        userId={USER_ID}
+        nickname={NICKNAME}
+        theme="dark"
+        accessToken={ACCESS_TOKEN}
+      >
+        <ChatApp />
+        <EditUserProfileProvider></EditUserProfileProvider>
+      </SendbirdProvider>
+    </div>
+  );
+};
 
-export default App
+export default App;
