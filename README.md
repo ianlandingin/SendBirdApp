@@ -72,6 +72,8 @@ Issues:
 
 Assuming I was able to get the module to fetch user data, channel data, etc from the APP.
 
+I've created a react app using vite for simplicity and speed.
+
 I've developed the backend using nodejs expressjs.
 
 2 routes for API endpoints:
