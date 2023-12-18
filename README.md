@@ -78,3 +78,4 @@ I've developed the backend using nodejs expressjs.
 - userRoutes
 - channelRoutes
 
+I've also created postman/thunder client collection, both for prod and local hosts, during endpoint testing.
