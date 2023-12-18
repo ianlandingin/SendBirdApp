@@ -12,7 +12,7 @@ const USER_ID = import.meta.env.VITE_USER_ID;
 const NICKNAME = import.meta.env.VITE_NICKNAME;
 const ACCESS_TOKEN = import.meta.env.VITE_ACCESS_TOKEN;
 console.log(
-  document.getElementsByClassName("sendbird-channel-header__title")[0]
+  document.getElementsByClassName("sendbird-channel-header__title").length
 );
 
 const App = () => {
